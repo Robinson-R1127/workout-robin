@@ -1,0 +1,36 @@
+<mat-toolbar class="header" color="primary">WorkOut</mat-toolbar>
+<div class="create">
+  <h1>Create New Acount</h1>
+  <p>Profile</p>
+
+  <!-- 親のformに作ったformの名前を入れる -->
+  <!-- (ngSubmit)で送信されたときどういったメソッドを起こすか -->
+  <div class="profile">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <!-- mat-form-fieldの中身は名前を入力する欄を意味している -->
+      <mat-form-field>
+        <mat-label>User name</mat-label>
+        <!-- htmlにもrequiredで必須入力と定義する。placeholderで例文を表示させる -->
+        <input
+          formControlName="name"
+          matInput
+          autofocus
+          placeholder="John Smith"
+          type="text"
+          autocomplete="off"
+          required
+        />
+        <mat-error *ngIf="nameControl.hasError('required')"
+          >You must enter a value</mat-error
+        >
+        <mat-error *ngIf="nameControl.hasError('maxlength')"
+          >Text string is too long
+        </mat-error>
+      </mat-form-field>
+
+      <button [disabled]="form.invalid" mat-raised-button color="primary">
+        Start
+      </button>
+    </form>
+  </div>
+</div>
