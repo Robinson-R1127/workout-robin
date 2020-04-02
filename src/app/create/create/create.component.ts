@@ -35,6 +35,7 @@ export class CreateComponent implements OnInit {
     return this.form.get('name') as FormControl;
   }
 
+  // エラー発生するたびに表示される
   constructor(private fb: FormBuilder) {
     this.nameControl.markAsTouched();
   }
