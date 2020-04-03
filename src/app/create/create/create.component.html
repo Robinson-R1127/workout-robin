@@ -24,11 +24,23 @@
           >You must enter a value</mat-error
         >
         <mat-error *ngIf="nameControl.hasError('maxlength')"
-          >Text string is too long
-        </mat-error>
+          >Text string is too long</mat-error
+        >
       </mat-form-field>
+      <br />
 
-      <button [disabled]="form.invalid" mat-raised-button color="primary">
+      <!-- 性別 -->
+      <mat-form-field formControlName="gender">
+        <mat-label>Select an Gender</mat-label>
+        <mat-select>
+          <mat-option>None</mat-option>
+          <mat-option value="male">Male</mat-option>
+          <mat-option value="female">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <button mat-raised-button color="primary">
         Start
       </button>
     </form>

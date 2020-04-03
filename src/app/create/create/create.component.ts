@@ -19,15 +19,8 @@ export class CreateComponent implements OnInit {
         // .maxLengthで最大文字数を定義する
         Validators.maxLength(40)
       ]
-    ]
-    // gender: ['', [
-    //   Validators.required,
-    //   Validators.pattern(/male|female/)
-    // ]],
-    // email: ['', [
-    //   Validators.required,
-    //   Validators.email
-    // ]]
+    ],
+    gender: ['', [Validators.required, Validators.pattern(/male|female/)]]
   });
 
   // エラーの内容を表示させる:create.html15,16
@@ -35,7 +28,7 @@ export class CreateComponent implements OnInit {
     return this.form.get('name') as FormControl;
   }
 
-  // エラー発生するたびに表示される
+  // 開いたときに最初からエラーとして表示させる
   constructor(private fb: FormBuilder) {
     this.nameControl.markAsTouched();
   }

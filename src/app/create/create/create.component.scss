@@ -10,6 +10,14 @@ p {
   color: white;
   font-size: 20px;
 }
+
+.profile {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 200px;
+  height: 500px;
+  border-radius: 5px;
+}
+
 .create {
   background: center/cover url(/assets/images/training.jpg);
   height: 100%;
@@ -41,7 +49,7 @@ mat-label {
 }
 
 mat-form-field {
-  color: white;
+  color: black;
 }
 
 mat-select {
@@ -50,4 +58,5 @@ mat-select {
 
 ::placeholder {
   color: white;
+  opacity: 0.6;
 }
