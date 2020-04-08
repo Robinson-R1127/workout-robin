@@ -4,6 +4,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -12,7 +13,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     LoginRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatButtonModule
   ]
 })
 export class LoginModule {}

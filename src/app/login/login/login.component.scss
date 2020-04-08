@@ -2,8 +2,9 @@ h1 {
   color: white;
 }
 
-p {
-  color: white;
+mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
 }
 
 .account {
