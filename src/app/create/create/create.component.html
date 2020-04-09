@@ -24,10 +24,11 @@
     <form [formGroup]="form" (ngSubmit)="submit()">
       <!-- mat-form-fieldの中身は名前を入力する欄を意味している -->
       <mat-form-field>
-        <mat-label>User name</mat-label>
+        <mat-label>user name</mat-label>
         <!-- htmlにもrequiredで必須入力と定義する。placeholderで例文を表示させる -->
         <input
           formControlName="name"
+          id="userName"
           matInput
           autofocus
           placeholder="John Smith"
@@ -46,7 +47,7 @@
 
       <!-- 性別 -->
       <mat-form-field formControlName="gender">
-        <mat-label>Select an Gender</mat-label>
+        <mat-label>select an gender</mat-label>
         <mat-select>
           <mat-option>None</mat-option>
           <mat-option value="male">Male</mat-option>
@@ -55,8 +56,24 @@
       </mat-form-field>
       <br />
 
+      <!-- Email -->
+      <mat-form-field>
+        <mat-label>email</mat-label>
+        <input
+          formControlName="email"
+          id="email"
+          matInput
+          placeholder="WorkOut123@example.com"
+          type="text"
+          autocomplete="off"
+          required
+        />
+
+        <mat-error></mat-error>
+      </mat-form-field>
+
       <button mat-raised-button color="primary">
-        Start
+        Next
       </button>
     </form>
   </div>
