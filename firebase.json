@@ -11,6 +11,7 @@
   },
   "hosting": [
     {
+      "target": "workout",
       "public": "dist/workout",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
