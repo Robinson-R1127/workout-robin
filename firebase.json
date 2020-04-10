@@ -19,17 +19,6 @@
           "destination": "/index.html"
         }
       ]
-    },
-    {
-      "target": "workout",
-      "public": "dist/workout",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
     }
   ],
   "storage": {
