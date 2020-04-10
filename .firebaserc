@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "workout-65542"
+  },
+  "targets": {
+    "workout-65542": {
+      "hosting": {
+        "workout": [
+          "workout-65542"
+        ]
+      }
+    }
   }
 }
