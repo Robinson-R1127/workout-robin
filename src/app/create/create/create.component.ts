@@ -10,6 +10,7 @@ import { FormBuilder, Validators, FormControl } from '@angular/forms';
 // ModuleでimportしたFormを画面上で使うためにComponentで定義するためにbuildして作る
 //   constructorの中に使いたい機能を定義
 export class CreateComponent implements OnInit {
+  hide = true;
   form = this.fb.group({
     name: [
       '',

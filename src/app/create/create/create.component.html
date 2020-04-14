@@ -68,9 +68,32 @@
           autocomplete="email"
           required
         />
-
         <mat-error></mat-error>
       </mat-form-field>
+      <br />
+
+      <!-- password -->
+      <mat-form-field>
+        <mat-label>password</mat-label>
+        <input
+          type="hide ? 'password' : text"
+          matInput
+          placeholder="password"
+          id="password"
+          formControlName="password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br />
 
       <button mat-raised-button color="primary">
         Next
