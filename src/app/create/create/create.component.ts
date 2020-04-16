@@ -11,6 +11,7 @@ import { FormBuilder, Validators, FormControl } from '@angular/forms';
 //   constructorの中に使いたい機能を定義
 export class CreateComponent implements OnInit {
   hide = true;
+  hideConfirm = true;
   form = this.fb.group({
     name: [
       '',

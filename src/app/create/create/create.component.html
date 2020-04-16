@@ -92,6 +92,27 @@
         >
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
+        <mat-error></mat-error>
+      </mat-form-field>
+      <br />
+
+      <!-- confirm-password -->
+      <mat-form-field>
+        <mat-label>confirm password</mat-label>
+        <input
+          [type]="hideConfirm ? 'password' : 'text'"
+          matInput
+          placeholder="confirm password"
+          id="confirmPassword"
+          formControlName="confirmPassword"
+          required
+        />
+        <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm">
+          <mat-icon>{{
+            hideConfirm ? 'visibility_off' : 'visibility'
+          }}</mat-icon>
+        </button>
+        <mat-error></mat-error>
       </mat-form-field>
       <br />
 
