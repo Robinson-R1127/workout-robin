@@ -68,7 +68,12 @@
           autocomplete="email"
           required
         />
-        <mat-error></mat-error>
+        <mat-error *ngIf="emailControl.hasError('required')"
+          >You must enter a value</mat-error
+        >
+        <mat-error *ngIf="emailControl.hasError('email')"
+          >Not a valid email</mat-error
+        >
       </mat-form-field>
       <br />
 
