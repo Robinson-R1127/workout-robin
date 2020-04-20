@@ -22,12 +22,16 @@ export class CreateComponent implements OnInit {
         Validators.maxLength(40)
       ]
     ],
-    gender: ['', [Validators.required, Validators.pattern(/male|female/)]]
+    gender: ['', [Validators.pattern(/male|female/)]],
+    email: ['', [Validators.required, Validators.email]]
   });
 
   // エラーの内容を表示させる:create.html15,16
   get nameControl() {
     return this.form.get('name') as FormControl;
+  }
+  get emailControl() {
+    return this.form.get('email') as FormControl;
   }
 
   // 開いたときに最初からエラーとして表示させる
