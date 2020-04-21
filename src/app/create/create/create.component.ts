@@ -23,7 +23,8 @@ export class CreateComponent implements OnInit {
       ]
     ],
     gender: ['', [Validators.pattern(/male|female/)]],
-    email: ['', [Validators.required, Validators.email]]
+    email: ['', [Validators.required, Validators.email]],
+    confirmPassword: ['', [Validators.required]]
   });
 
   // エラーの内容を表示させる:create.html15,16
@@ -32,6 +33,9 @@ export class CreateComponent implements OnInit {
   }
   get emailControl() {
     return this.form.get('email') as FormControl;
+  }
+  get confirmPasswordControl() {
+    return this.form.get('confirmPassword') as FormControl;
   }
 
   // 開いたときに最初からエラーとして表示させる

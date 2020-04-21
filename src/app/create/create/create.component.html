@@ -119,7 +119,9 @@
             hideConfirm ? 'visibility_off' : 'visibility'
           }}</mat-icon>
         </button>
-        <mat-error></mat-error>
+        <mat-error *ngIf="confirmPasswordControl.hasError('required')"
+          >You must enter a value</mat-error
+        >
       </mat-form-field>
       <br />
 
