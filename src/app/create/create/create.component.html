@@ -93,7 +93,12 @@
         >
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
-        <mat-error></mat-error>
+        <mat-error *ngIf="passwordControl.hasError('required')"
+          >You must enter a value</mat-error
+        >
+        <mat-error *ngIf="passwordControl.hasError('minLength')"
+          >Password is short</mat-error
+        >
       </mat-form-field>
       <br />
 
