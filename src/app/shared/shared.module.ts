@@ -10,18 +10,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [
-    ReactiveFormsModule,
-    FormsModule,
-    MatToolbarModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatIconModule
-  ],
-  imports: [CommonModule],
+  // Componentを使いたい時はdeclarationsとimportsに入れる
+  declarations: [],
+  imports: [],
   exports: [
     ReactiveFormsModule,
     FormsModule,
