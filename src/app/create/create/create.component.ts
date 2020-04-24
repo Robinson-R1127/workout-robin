@@ -23,7 +23,9 @@ export class CreateComponent implements OnInit {
       ]
     ],
     gender: ['', [Validators.required, Validators.pattern(/male|female/)]],
-    password: ['', [Validators.required, Validators.minLength(8)]]
+    password: ['', [Validators.required, Validators.minLength(8)]],
+    email: ['', [Validators.required, Validators.email]],
+    confirmPassword: ['', [Validators.required]]
   });
 
   // エラーの内容を表示させる:create.html15,16
@@ -33,6 +35,13 @@ export class CreateComponent implements OnInit {
   get passwordControl() {
     return this.form.get('password') as FormControl;
   }
+  get emailControl() {
+    return this.form.get('email') as FormControl;
+  }
+  get confirmPasswordControl() {
+    return this.form.get('confirmPassword') as FormControl;
+  }
+
   // 開いたときに最初からエラーとして表示させる
   constructor(private fb: FormBuilder) {
     this.nameControl.markAsTouched();

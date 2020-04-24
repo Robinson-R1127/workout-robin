@@ -46,8 +46,9 @@
       <br />
 
       <!-- 性別 -->
-      <mat-form-field formControlName="gender">
+      <mat-form-field>
         <mat-label>select an gender</mat-label>
+        <input matInput formControlName="gender" id="gender" type="text" />
         <mat-select>
           <mat-option>None</mat-option>
           <mat-option value="male">Male</mat-option>
@@ -68,7 +69,12 @@
           autocomplete="email"
           required
         />
-        <mat-error></mat-error>
+        <mat-error *ngIf="emailControl.hasError('required')"
+          >You must enter a value</mat-error
+        >
+        <mat-error *ngIf="emailControl.hasError('email')"
+          >Not a valid email</mat-error
+        >
       </mat-form-field>
       <br />
 
@@ -118,7 +124,9 @@
             hideConfirm ? 'visibility_off' : 'visibility'
           }}</mat-icon>
         </button>
-        <mat-error></mat-error>
+        <mat-error *ngIf="confirmPasswordControl.hasError('required')"
+          >You must enter a value</mat-error
+        >
       </mat-form-field>
       <br />
 
