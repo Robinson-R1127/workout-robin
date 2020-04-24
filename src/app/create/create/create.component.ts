@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit {
         Validators.maxLength(40)
       ]
     ],
-    gender: ['', [Validators.required, Validators.pattern(/male|female/)]],
+    gender: ['', [Validators.pattern(/male|female/)]],
     password: ['', [Validators.required, Validators.minLength(8)]],
     email: ['', [Validators.required, Validators.email]],
     confirmPassword: ['', [Validators.required]]
