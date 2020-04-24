@@ -22,7 +22,8 @@ export class CreateComponent implements OnInit {
         Validators.maxLength(40)
       ]
     ],
-    gender: ['', [Validators.pattern(/male|female/)]],
+    gender: ['', [Validators.required, Validators.pattern(/male|female/)]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
     email: ['', [Validators.required, Validators.email]],
     confirmPassword: ['', [Validators.required]]
   });
@@ -30,6 +31,9 @@ export class CreateComponent implements OnInit {
   // エラーの内容を表示させる:create.html15,16
   get nameControl() {
     return this.form.get('name') as FormControl;
+  }
+  get passwordControl() {
+    return this.form.get('password') as FormControl;
   }
   get emailControl() {
     return this.form.get('email') as FormControl;
