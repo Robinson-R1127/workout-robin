@@ -43,3 +43,16 @@ mat-toolbar-row {
     left: 0;
   }
 }
+
+mat-form-field {
+  color: black;
+}
+
+mat-label {
+  color: white;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.6;
+}

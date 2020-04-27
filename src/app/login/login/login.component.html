@@ -25,9 +25,46 @@
           matInput
           type="email"
           formControlName="email"
+          id="email"
+          placeholder="WorkOut123@example.com"
           autocomplete="email"
+          required
         />
-        <mat-error></mat-error>
+        <mat-error *ngIf="emailControl.hasError('required')"
+          >You must enter a value</mat-error
+        >
+        <mat-error *ngIf="emailControl.hasError('email')"
+          >Not a valid email</mat-error
+        >
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>password</mat-label>
+        <mat-hint>8+ characters</mat-hint>
+        <input
+          [type]="hide ? 'password' : 'text'"
+          matInput
+          placeholder="password"
+          id="password"
+          formControlName="password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="passwordControl.hasError('required')"
+          >You must enter a value</mat-error
+        >
+        <mat-error *ngIf="passwordControl.hasError('minlength')"
+          >Password is short</mat-error
+        >
       </mat-form-field>
     </form>
   </div>
