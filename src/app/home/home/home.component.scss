@@ -6,3 +6,18 @@ mat-toolbar-row {
   display: flex;
   justify-content: space-between;
 }
+
+.card {
+  max-width: 400px;
+}
+
+.header-image {
+  background-image: url(/assets/images/training.jpg);
+  background-size: cover;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: 16px;
+}
