@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   // Componentを使いたい時はdeclarationsとimportsに入れる
@@ -22,7 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ]
 })
 export class SharedModule {}
