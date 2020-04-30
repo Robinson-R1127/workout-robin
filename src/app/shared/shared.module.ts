@@ -9,6 +9,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   // Componentを使いたい時はdeclarationsとimportsに入れる
@@ -24,7 +25,8 @@ import { MatCardModule } from '@angular/material/card';
     MatRadioModule,
     MatSelectModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ]
 })
 export class SharedModule {}
