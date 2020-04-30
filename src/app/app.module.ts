@@ -8,9 +8,11 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PostDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,9 +21,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // 外部から突如現れるコンポーネントを使うにはentryComponentsに中身をいれて使う
+  entryComponents: [PostDialogComponent]
 })
 export class AppModule {}
