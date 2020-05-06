@@ -71,9 +71,14 @@
       </a>
 
       <h2>SNS acount</h2>
-      <a mat-raised-button color="primary" (click)="login()">
+      <a class="google" mat-raised-button color="primary" (click)="login()">
         Google
       </a>
+
+      <button (click)="signInWithFacebook()" class="facebook" mat-raised-button>
+        <mat-icon class="sns-icon fab fa-facebook-f"></mat-icon
+        >Facebookでログイン
+      </button>
     </form>
   </div>
 </div>
