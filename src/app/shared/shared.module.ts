@@ -10,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   // Componentを使いたい時はdeclarationsとimportsに入れる
@@ -26,7 +28,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSelectModule,
     MatIconModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSidenavModule,
+    MatListModule
   ]
 })
 export class SharedModule {}
