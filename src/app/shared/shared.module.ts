@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   // Componentを使いたい時はdeclarationsとimportsに入れる
@@ -30,7 +31,8 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     MatDialogModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule
   ]
 })
 export class SharedModule {}
