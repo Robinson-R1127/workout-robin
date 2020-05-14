@@ -1,3 +1,15 @@
 .card {
   height: 200px;
 }
+mat-sidenav {
+  width: 230px;
+}
+
+.header-logo {
+  color: white;
+}
+
+mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+}
