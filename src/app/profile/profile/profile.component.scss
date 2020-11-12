@@ -13,3 +13,16 @@ mat-toolbar-row {
   display: flex;
   justify-content: space-between;
 }
+
+mat-sidenav-container {
+  overflow: auto;
+}
+mat-tab-group {
+  position: relative;
+  z-index: 0;
+}
+
+mat-item-list {
+  position: absolute;
+  z-index: 1;
+}
