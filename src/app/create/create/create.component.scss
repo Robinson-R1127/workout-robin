@@ -17,10 +17,14 @@ p {
 }
 
 .profile {
-  background-color: rgba(255, 255, 255, 0.3);
-  width: 200px;
-  height: 500px;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 5px;
+  padding: 24px;
+  width: 50%;
+  &__form {
+    padding: 8px;
+    margin: 0 auto;
+  }
 }
 
 .create {
@@ -28,7 +32,6 @@ p {
   height: 100%;
   text-align: center;
   display: flex;
-  // justify-content: center;
   flex-flow: column;
   align-items: center;
   position: relative;
@@ -55,6 +58,7 @@ mat-label {
 
 mat-form-field {
   color: black;
+  width: 100%;
 }
 
 mat-select {
