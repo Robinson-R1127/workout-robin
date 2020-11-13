@@ -22,6 +22,7 @@
   <!-- (ngSubmit)で送信されたときどういったメソッドを起こすか -->
   <div class="profile">
     <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="profile__form">
       <!-- mat-form-fieldの中身は名前を入力する欄を意味している -->
       <mat-form-field>
         <mat-label>user name</mat-label>
@@ -43,7 +44,7 @@
           >Text string is too long</mat-error
         >
       </mat-form-field>
-      <br />
+
 
       <!-- 性別 -->
       <mat-form-field>
@@ -54,7 +55,7 @@
           <mat-option value="female">Female</mat-option>
         </mat-select>
       </mat-form-field>
-      <br />
+
 
       <!-- Email -->
       <mat-form-field>
@@ -75,7 +76,6 @@
           >Not a valid email</mat-error
         >
       </mat-form-field>
-      <br />
 
       <!-- password -->
       <mat-form-field>
@@ -105,7 +105,6 @@
           >Password is short</mat-error
         >
       </mat-form-field>
-      <br />
 
       <!-- confirm-password -->
       <mat-form-field>
@@ -127,11 +126,11 @@
           >You must enter a value</mat-error
         >
       </mat-form-field>
-      <br />
 
       <button mat-raised-button color="primary">
         Next
       </button>
+    </div>
     </form>
   </div>
 </div>
