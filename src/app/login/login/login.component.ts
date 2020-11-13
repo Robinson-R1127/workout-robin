@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
@@ -25,8 +27,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  login() {
-    this.authService.login();
+  login() {}
+
+  signInWithGoogle() {
+    this.authService.signInWithGoogle();
   }
 
   signInWithFacebook() {
