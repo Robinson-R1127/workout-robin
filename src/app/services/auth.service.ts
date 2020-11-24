@@ -27,7 +27,25 @@ export class AuthService {
             alert('このアドレスは既に登録されています。');
             break;
           case 'auth/invalid-email':
-            alert('メールアドレスが不正です。');
+            alert('メールアドレスが不正です');
+            break;
+        }
+      });
+  }
+
+  login(params: { email: string; password: string }) {
+    this.afAuth
+      .signInWithEmailAndPassword(params.email, params.password)
+      .catch(error => {
+        switch (error.code) {
+          case 'auth/user-not-found':
+            alert('No user found for this email address');
+            break;
+          case 'auth/wrong-password':
+            alert('your password is incorrect');
+            break;
+          case 'auth/invalid-email':
+            alert('The email address is incorrect');
             break;
         }
       });
