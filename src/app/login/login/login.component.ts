@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Validators, FormBuilder, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -23,11 +24,17 @@ export class LoginComponent implements OnInit {
     return this.form.get('password') as FormControl;
   }
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private afAuth: AngularFireAuth
+  ) {}
 
   ngOnInit() {}
 
-  login() {}
+  login() {
+    this.authService.login(this.form.value);
+  }
 
   signInWithGoogle() {
     this.authService.signInWithGoogle();
