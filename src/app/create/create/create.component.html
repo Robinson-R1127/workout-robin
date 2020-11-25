@@ -125,9 +125,10 @@
         <mat-error *ngIf="confirmPasswordControl.hasError('required')"
           >You must enter a value</mat-error
         >
+        <mat-error *ngIf="form.controls.confirmPassword.errors?.notMatchPassword">Passwords do not match</mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="primary">
+      <button (click)="create()" mat-raised-button color="primary" routerLink="/login">
         Next
       </button>
     </div>

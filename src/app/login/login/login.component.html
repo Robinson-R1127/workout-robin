@@ -19,59 +19,61 @@
 
   <div class="account">
     <form [formGroup]="form">
-      <mat-form-field>
-        <mat-label>email</mat-label>
-        <input
-          matInput
-          type="email"
-          formControlName="email"
-          id="email"
-          placeholder="WorkOut123@example.com"
-          autocomplete="email"
-          required
-        />
-        <mat-error *ngIf="emailControl.hasError('required')"
-          >You must enter a value</mat-error
-        >
-        <mat-error *ngIf="emailControl.hasError('email')"
-          >Not a valid email</mat-error
-        >
-      </mat-form-field>
+      <div class="account__email">
+        <mat-form-field>
+          <mat-label>email</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            id="email"
+            placeholder="WorkOut123@example.com"
+            autocomplete="email"
+            required
+          />
+          <mat-error *ngIf="emailControl.hasError('required')"
+            >You must enter a value</mat-error
+          >
+          <mat-error *ngIf="emailControl.hasError('email')"
+            >Not a valid email</mat-error
+          >
+        </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>password</mat-label>
-        <mat-hint>8+ characters</mat-hint>
-        <input
-          [type]="hide ? 'password' : 'text'"
-          matInput
-          placeholder="password"
-          id="password"
-          formControlName="password"
-          required
-        />
-        <button
-          mat-icon-button
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide"
-        >
-          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        <mat-form-field>
+          <mat-label>password</mat-label>
+          <mat-hint>8+ characters</mat-hint>
+          <input
+            [type]="hide ? 'password' : 'text'"
+            matInput
+            placeholder="password"
+            id="password"
+            formControlName="password"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="passwordControl.hasError('required')"
+            >You must enter a value</mat-error
+          >
+          <mat-error *ngIf="passwordControl.hasError('minlength')"
+            >Password is short</mat-error
+          >
+        </mat-form-field>
+
+        <button [disabled]="form.invalid" (click)="login()" mat-raised-button color="primary" routerLink="/profile">
+          Login
         </button>
-        <mat-error *ngIf="passwordControl.hasError('required')"
-          >You must enter a value</mat-error
-        >
-        <mat-error *ngIf="passwordControl.hasError('minlength')"
-          >Password is short</mat-error
-        >
-      </mat-form-field>
 
-      <a mat-raised-button color="primary" routerLink="/home">
-        Login
-      </a>
-
+      </div>
       <h2>SNS acount</h2>
-      <a class="google" mat-raised-button color="primary" (click)="login()">
+      <a class="google" mat-raised-button color="primary" (click)="signInWithGoogle()">
         Google
       </a>
 
