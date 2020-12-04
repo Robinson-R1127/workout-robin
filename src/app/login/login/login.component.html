@@ -18,7 +18,7 @@
   <h1>Login</h1>
 
   <div class="account">
-    <form [formGroup]="form">
+    <form [formGroup]="form" class="account__form">
       <div class="account__email">
         <mat-form-field>
           <mat-label>email</mat-label>
@@ -73,13 +73,12 @@
 
       </div>
       <h2>SNS acount</h2>
-      <a class="google" mat-raised-button color="primary" (click)="signInWithGoogle()">
-        Google
+      <a class="google-button" mat-raised-button (click)="signInWithGoogle()">
+        <img class="g-icon" src="assets/images/google-logo.png" width="20" height="20">Continue With Google
       </a>
 
       <button (click)="signInWithFacebook()" class="facebook" mat-raised-button>
-        <mat-icon class="sns-icon fab fa-facebook-f"></mat-icon
-        >Facebookでログイン
+        <img class="f-icon" src="assets/images/f_logo_RGB-Blue_58.png" width="20" height="20" alt="facebook-icon">Continue With Facebook
       </button>
     </form>
   </div>
