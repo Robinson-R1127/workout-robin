@@ -10,9 +10,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
 import { SharedModule } from './shared/shared.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, PostDialogComponent],
+  declarations: [AppComponent, PostDialogComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

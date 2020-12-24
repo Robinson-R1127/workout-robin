@@ -16,10 +16,14 @@ mat-toolbar-row {
 }
 
 .account {
-  background-color: rgba(255, 255, 255, 0.3);
-  width: 200px;
-  height: 500px;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 50%;
+  padding: 24px;
   border-radius: 5px;
+  &__form {
+    padding: 8px;
+    margin: 0 auto;
+  }
 }
 
 .login-form {
@@ -50,6 +54,7 @@ mat-toolbar-row {
 
 mat-form-field {
   color: black;
+  width: 100%;
 }
 
 mat-label {
@@ -61,16 +66,21 @@ mat-label {
   opacity: 0.6;
 }
 
-.google {
-  margin-bottom: 16px;
+.google-button {
+  font-weight: bold;
+  margin-bottom: 18px;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+
+  .g-icon {
+      position: absolute;
+      left: 15px;
+      top: 25%;
+      width: 1.4em;
+  }
 }
 
-.sns-icon {
-  font-size: 20px;
-  position: absolute;
-  left: 15px;
-  top: 25%;
-}
 
 .facebook {
   color: #fff;
@@ -79,4 +89,13 @@ mat-label {
   font-weight: bold;
   width: 100%;
   margin-bottom: 10px;
+  border-style: solid;
+  border-width: 1px;
+
+  .f-icon {
+    position: absolute;
+      left: 15px;
+      top: 25%;
+      width: 1.4em;
+  }
 }

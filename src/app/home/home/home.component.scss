@@ -1,4 +1,15 @@
+@mixin sp {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
 .header {
+  position: fixed;
+  z-index: 1000;
+}
+
+.header-logo {
   color: white;
 }
 
@@ -7,8 +18,27 @@ mat-toolbar-row {
   justify-content: space-between;
 }
 
+.user-avatar {
+  background-size: cover;
+}
+
 .card {
   max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 36px;
+  border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
+  border-radius: 0;
+  max-width: auto;
+}
+
+.timeline {
+  position: relative;
+  height: 100vh;
+  padding-top: 64px;
+  @include sp {
+    padding-top: 56px;
+  }
 }
 
 .header-image {
@@ -19,14 +49,21 @@ mat-toolbar-row {
 .grid {
   display: grid;
   grid-template-columns: repeat(1fr);
-  gap: 16px;
+  gap: 36px;
 }
 
-.footer-content {
+.post-button {
+  position: absolute;
+  right: 24px;
+  bottom: 36px;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 35px;
-  padding: 10px;
+  display: block;
+  width: 55px;
+  height: 55px;
+  background: #673ab7;
+  color: white;
+  border-radius: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
 }
