@@ -1,0 +1,18 @@
+@mixin sp {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+.header-logo {
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+
+img {
+  margin-top: 50px;
+  @include sp {
+    width: 240px;
+  }
+}
