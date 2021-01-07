@@ -54,6 +54,7 @@
     "pretty-quick": "^2.0.1",
     "protractor": "~7.0.0",
     "ts-node": "~7.0.0",
+    "tslint": "~6.1.0",
     "typescript": "~4.0.5",
     "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
     "firebase-tools": "^7.12.0",
