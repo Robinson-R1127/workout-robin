@@ -42,6 +42,15 @@ mat-toolbar-row {
   }
 }
 
+ol {
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+}
+
 .last {
   position: absolute;
   right: 0;
