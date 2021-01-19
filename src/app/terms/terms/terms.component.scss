@@ -1,0 +1,57 @@
+@mixin sp {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+.header {
+  position: fixed;
+  z-index: 1000;
+}
+
+.header-logo {
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+
+mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-avatar {
+  background-image: url(/assets/images/training.jpg);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-position: left top;
+  display: inline-block;
+}
+
+.terms {
+  z-index: 10;
+  position: relative;
+  height: 100%;
+  margin: 0 195.5px 0 195.5px;
+  padding-top: 64px;
+  padding-bottom: 65px;
+  @include sp {
+    margin: 0 25px 0 25px;
+    padding-top: 56px;
+  }
+}
+
+ol {
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+}
+
+.last {
+  position: absolute;
+  right: 0;
+}
