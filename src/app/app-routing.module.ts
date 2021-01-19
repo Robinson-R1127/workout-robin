@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
@@ -19,12 +20,17 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+    pathMatch: 'full',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+    canLoad: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
     loadChildren: () =>
-      import('./profile/profile.module').then(m => m.ProfileModule)
+      import('./profile/profile.module').then(m => m.ProfileModule),
+    canLoad: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   {
     path: 'privacy',
