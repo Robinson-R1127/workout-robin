@@ -67,18 +67,36 @@
           >
         </mat-form-field>
 
-        <button [disabled]="form.invalid" (click)="login()" mat-raised-button color="primary" routerLink="/profile">
+        <button
+          [disabled]="form.invalid"
+          (click)="login()"
+          mat-raised-button
+          color="primary"
+          routerLink="/profile"
+        >
           Login
         </button>
-
       </div>
       <h2>SNS acount</h2>
       <a class="google-button" mat-raised-button (click)="signInWithGoogle()">
-        <img class="g-icon" src="assets/images/google-logo.png" width="20" height="20">Continue With Google
+        <img
+          alt="google"
+          class="g-icon"
+          src="assets/images/google-logo.png"
+          width="20"
+          height="20"
+        />Continue With Google
       </a>
 
       <button (click)="signInWithFacebook()" class="facebook" mat-raised-button>
-        <img class="f-icon" src="assets/images/f_logo_RGB-Blue_58.png" width="20" height="20" alt="facebook-icon">Continue With Facebook
+        <img
+          alt="facebook"
+          class="f-icon"
+          src="assets/images/facebook-logo.png"
+          width="20"
+          height="20"
+          alt="facebook-icon"
+        />Continue With Facebook
       </button>
     </form>
   </div>

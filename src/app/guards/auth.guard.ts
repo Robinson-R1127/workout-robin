@@ -10,17 +10,17 @@ import {
   Router
 } from '@angular/router';
 import { Observable } from 'rxjs';
-
-import { map, take, tap } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
+import { map, take, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanLoad {
   constructor(private authService: AuthService, private router: Router) {}
+
   canActivate(
-    route: ActivatedRouteSnapshot,
+    next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ):
     | Observable<boolean | UrlTree>
@@ -31,7 +31,6 @@ export class AuthGuard implements CanActivate, CanLoad {
       map(user => !!user),
       tap(isLoggedIn => {
         if (!isLoggedIn) {
-          this.router.navigateByUrl('/');
         }
       })
     );
