@@ -10,17 +10,17 @@ import {
   Router
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from '../services/auth.service';
+
 import { map, take, tap } from 'rxjs/operators';
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanLoad {
   constructor(private authService: AuthService, private router: Router) {}
-
   canActivate(
-    next: ActivatedRouteSnapshot,
+    route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ):
     | Observable<boolean | UrlTree>
@@ -29,8 +29,8 @@ export class AuthGuard implements CanActivate, CanLoad {
     | UrlTree {
     return this.authService.afUser$.pipe(
       map(user => !!user),
-      tap(isLoggdin => {
-        if (!isLoggdin) {
+      tap(isLoggedIn => {
+        if (!isLoggedIn) {
           this.router.navigateByUrl('/');
         }
       })
@@ -43,9 +43,9 @@ export class AuthGuard implements CanActivate, CanLoad {
     return this.authService.afUser$.pipe(
       map(user => !!user),
       take(1),
-      tap(isLoggdin => {
-        if (!isLoggdin) {
-          this.router.navigateByUrl('/');
+      tap(isLoggedin => {
+        if (!isLoggedin) {
+          this.router.navigateByUrl('/welcome');
         }
       })
     );
