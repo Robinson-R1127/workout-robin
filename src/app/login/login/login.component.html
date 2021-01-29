@@ -78,14 +78,18 @@
         </button>
       </div>
       <h2>SNS acount</h2>
-      <a class="google-button" mat-raised-button (click)="signInWithGoogle()">
+      <button
+        class="google-button"
+        mat-raised-button
+        (click)="signInWithGoogle()"
+      >
         <img
           class="g-icon"
           src="assets/images/google-logo.png"
           width="20"
           height="20"
         />Continue With Google
-      </a>
+      </button>
 
       <button (click)="signInWithFacebook()" class="facebook" mat-raised-button>
         <img
