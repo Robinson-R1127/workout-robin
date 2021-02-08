@@ -115,6 +115,9 @@
     margin-bottom: 12px;
     text-align: center;
     font-size: 28px;
+    @media screen and (max-width: 735px) {
+      margin-top: 0;
+    }
   }
   &__contents {
     margin: 0;
