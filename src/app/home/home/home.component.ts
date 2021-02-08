@@ -15,8 +15,10 @@ export class HomeComponent implements OnInit {
 
   openPostDialog() {
     this.dialog.open(PostDialogComponent, {
-      width: '300px',
-      height: '450px'
+      width: '500px',
+      height: '460px',
+      autoFocus: false,
+      restoreFocus: false
     });
   }
 }

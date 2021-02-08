@@ -1,10 +1,46 @@
-<mat-dialog-content>
-  <mat-form-field matInput type="text" appearance="outline">
-    <textarea matInput></textarea>
-  </mat-form-field>
-</mat-dialog-content>
+<div class="wrapper">
+  <mat-dialog-content class="card">
+    <div class="card__title">
+      <h3 class="card__name" matDialogTitle>Create a post</h3>
+    </div>
+    <div class="card__forms">
+      <mat-form-field
+        class="card__form"
+        [formGroup]="form"
+        type="text"
+        appearance="outline"
+      >
+        <textarea
+          class="card__input"
+          placeholder="I worked out today."
+          formControlName="card"
+          autofocus
+          autocomplete="off"
+          matTextareaAutosize
+          matInput
+          cols="500"
+          rows="10"
+          wrap="soft"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <p class="card__count">0/500</p>
+  </mat-dialog-content>
 
-<mat-dialog-actions>
-  <button mat-button matDialogClose>Cancel</button>
-  <button mat-button>Post</button>
-</mat-dialog-actions>
+  <mat-dialog-actions class="actions">
+    <button mat-icon-button>
+      <mat-icon>perm_media</mat-icon>
+    </button>
+    <div class="actions__icon">
+      <button mat-raised-button matDialogClose>Cancel</button>
+      <button
+        class="actions__post"
+        mat-raised-button
+        [disabled]="form.invalid"
+        color="primary"
+      >
+        Post
+      </button>
+    </div>
+  </mat-dialog-actions>
+</div>

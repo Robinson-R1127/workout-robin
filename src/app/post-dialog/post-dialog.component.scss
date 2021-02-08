@@ -1,0 +1,30 @@
+.card {
+  &__title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    text-align: center;
+  }
+  &__name {
+    margin: 0 0 15px;
+  }
+  &__forms {
+    text-align: center;
+  }
+  &__form {
+    width: 95%;
+    margin-top: 15px;
+  }
+  &__count {
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: right;
+    margin: 0 0 34px;
+  }
+}
+
+.actions {
+  padding: 0;
+  justify-content: space-between;
+  &__post button {
+    margin-left: 28px;
+  }
+}
