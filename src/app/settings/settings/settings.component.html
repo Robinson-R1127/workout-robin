@@ -1,0 +1,120 @@
+<div class="wrapper">
+  <mat-toolbar color="primary" class="header">
+    <a routerLink="/" class="header__logo">Work Out</a>
+    <button
+      class="header__icon"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>help</mat-icon>
+        <span>Help</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <div class="container">
+    <div class="user">
+      <div class="user__header">
+        <div class="user__avatar">
+          <img class="user__avatars" src="/assets/images/training.jpg" alt="" />
+        </div>
+        <div class="user__headers">
+          <h1 class="user__name">Jhon Smith</h1>
+          <button class="user__edits" mat-stroked-button color="primary">
+            Edit profile image
+          </button>
+        </div>
+      </div>
+      <div class="user__container">
+        <div class="user__editname">
+          <p>User Name</p>
+          <div class="user__form">
+            <mat-form-field class="user__forms" appearance="outline">
+              <mat-label>Change your name</mat-label>
+              <input matInput placeholder="Jhon Smith" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="user__editsents">
+          <p>Introduction</p>
+          <mat-form-field
+            class="card__editsent"
+            type="text"
+            appearance="outline"
+          >
+            <textarea
+              class="card__input"
+              placeholder="Work Out"
+              autocomplete="off"
+              matInput
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="user__editgender">
+          <p>Gender</p>
+          <div class="user__form">
+            <mat-form-field appearance="outline">
+              <mat-label>select an gender</mat-label>
+              <mat-select matInput id="gender">
+                <mat-option>None</mat-option>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="user__editheight">
+          <p>Height</p>
+          <div class="user__form h">
+            <div class="user__height">
+              <mat-form-field class="user__forms" appearance="outline">
+                <mat-label>Change your Height</mat-label>
+                <input matInput type="number" placeholder="5" />
+                <span matSuffix>'</span>
+              </mat-form-field>
+            </div>
+            <div class="user__height">
+              <mat-form-field class="user__forms" appearance="outline">
+                <input matInput type="number" placeholder="6.93" />
+                <span matSuffix>"</span>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="user__editweight">
+          <p>Weight</p>
+          <div class="user__form">
+            <div class="user__weight">
+              <mat-form-field class="user__forms" appearance="outline">
+                <mat-label>Change your Weight</mat-label>
+                <input matInput type="number" placeholder="149" />
+                <span matSuffix>.</span>
+              </mat-form-field>
+            </div>
+            <div class="user__weight">
+              <mat-form-field class="user__forms" appearance="outline">
+                <input matInput type="number" placeholder="91" />
+                <span matSuffix>lb</span>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="user__action">
+        <button class="user__cancel" mat-stroked-button>Cancel</button>
+        <button class="user__save" mat-raised-button color="primary">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
