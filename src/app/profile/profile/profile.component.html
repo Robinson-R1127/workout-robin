@@ -10,7 +10,7 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button routerLink="/settings" mat-menu-item>
         <mat-icon>settings</mat-icon>
         <span>Settings</span>
       </button>
@@ -37,7 +37,12 @@
         </div>
         <div class="profile__headers">
           <h1 class="profile__name">Jhon Smith</h1>
-          <button class="profile__edit" mat-stroked-button color="black">
+          <button
+            routerLink="/settings"
+            class="profile__edit"
+            mat-stroked-button
+            color="black"
+          >
             Edit profile
           </button>
           <div class="profile__sent">

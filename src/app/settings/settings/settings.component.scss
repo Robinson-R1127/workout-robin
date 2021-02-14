@@ -1,0 +1,189 @@
+@mixin sp {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+$pad: 1.34375em;
+
+.header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  @include sp {
+    height: 64px;
+  }
+  &__logo {
+    text-decoration: none;
+    color: white;
+  }
+  &__icon {
+    margin: 0 0 0 auto;
+  }
+}
+
+.container {
+  z-index: 900;
+  padding-top: 64px;
+  margin: 0 195.5px 0 195.5px;
+  @media screen and (max-width: 1100px) {
+    margin: 0 180px 0 180px;
+  }
+  @media screen and (max-width: 950px) {
+    margin: 0 140px 0 140px;
+  }
+  @media screen and (max-width: 735px) {
+    margin: 0;
+  }
+}
+
+.user {
+  position: relative;
+  &__header {
+    margin: 16px 16px 48px;
+    display: flex;
+  }
+  &__headers {
+    flex: 1;
+  }
+  &__name {
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 28px;
+    @media screen and (max-width: 735px) {
+      margin-top: 0;
+    }
+  }
+  &__edits {
+    width: 100%;
+  }
+  &__avatar {
+    margin-right: 28px;
+    @media screen and (max-width: 735px) {
+      height: 77px;
+    }
+  }
+  &__avatars {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    @media screen and (max-width: 735px) {
+      width: 77px;
+      height: 77px;
+    }
+  }
+  // &__container {
+  // }
+  &__editname {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 735px) {
+      text-align: center;
+      display: block;
+    }
+  }
+  &__editname p {
+    padding-bottom: $pad;
+    @media screen and (max-width: 735px) {
+      padding-bottom: 0;
+      margin-top: 0;
+    }
+  }
+  &__form {
+    display: flex;
+    @media screen and (max-width: 735px) {
+      display: block;
+    }
+  }
+  &__forms {
+    padding: 0;
+    margin-left: 8px;
+  }
+  &__editsents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 735px) {
+      text-align: center;
+      display: block;
+    }
+  }
+  &__editsents p {
+    padding-bottom: $pad;
+    @media screen and (max-width: 735px) {
+      padding-bottom: 0;
+      margin-top: 0;
+    }
+  }
+  &__editgender {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 735px) {
+      text-align: center;
+      display: block;
+    }
+  }
+  &__editgender p {
+    padding-bottom: $pad;
+    @media screen and (max-width: 735px) {
+      padding-bottom: 0;
+      margin-top: 0;
+    }
+  }
+  &__editheight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 735px) {
+      text-align: center;
+      display: block;
+    }
+  }
+  &__editheight p {
+    padding-bottom: $pad;
+    @media screen and (max-width: 735px) {
+      padding-bottom: 0;
+      margin-top: 0;
+    }
+  }
+  &__form.h {
+    @media screen and (max-width: 735px) {
+      text-align: center;
+    }
+  }
+  &__editweight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 735px) {
+      text-align: center;
+      display: block;
+    }
+  }
+  &__editweight p {
+    padding-bottom: $pad;
+    @media screen and (max-width: 735px) {
+      padding-bottom: 0;
+      margin-top: 0;
+    }
+  }
+  &__action {
+    text-align: right;
+    padding-bottom: 12px;
+  }
+  &__cancel {
+    margin-right: 12px;
+  }
+  &__save {
+    @media screen and (max-width: 735px) {
+      margin-right: 12px;
+    }
+  }
+}
+
+p {
+  font-weight: bold;
+}
