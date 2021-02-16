@@ -11,9 +11,15 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, PostDialogComponent, NotFoundComponent],
+  declarations: [
+    AppComponent,
+    PostDialogComponent,
+    NotFoundComponent,
+    HeaderComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

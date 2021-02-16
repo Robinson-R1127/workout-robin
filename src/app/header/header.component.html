@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="header">
+  <a class="header__logo" routerLink="/">Work Out</a>
+  <button
+    class="header__icon"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item routerLink="/profile">
+      <mat-icon>account_circle</mat-icon>
+      <span>My page</span>
+    </a>
+    <button routerLink="/settings" mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item (click)="authService.logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
