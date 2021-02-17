@@ -1,18 +1,9 @@
-.header-logo {
-  color: white;
-}
-
 h1 {
   color: white;
 }
 
 h2 {
   color: white;
-}
-
-mat-toolbar-row {
-  display: flex;
-  justify-content: space-between;
 }
 
 .account {
@@ -27,11 +18,11 @@ mat-toolbar-row {
 }
 
 .login-form {
+  padding-top: 64px;
   background: center/cover url(/assets/images/training.jpg);
   height: 100%;
   text-align: center;
   display: flex;
-
   flex-flow: column;
   align-items: center;
   position: relative;
@@ -74,13 +65,12 @@ mat-label {
   border-width: 1px;
 
   .g-icon {
-      position: absolute;
-      left: 15px;
-      top: 25%;
-      width: 1.4em;
+    position: absolute;
+    left: 15px;
+    top: 25%;
+    width: 1.4em;
   }
 }
-
 
 .facebook {
   color: #fff;
@@ -94,8 +84,8 @@ mat-label {
 
   .f-icon {
     position: absolute;
-      left: 15px;
-      top: 25%;
-      width: 1.4em;
+    left: 15px;
+    top: 25%;
+    width: 1.4em;
   }
 }
