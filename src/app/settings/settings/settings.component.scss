@@ -6,22 +6,6 @@
 
 $pad: 1.34375em;
 
-.header {
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
-  @include sp {
-    height: 64px;
-  }
-  &__logo {
-    text-decoration: none;
-    color: white;
-  }
-  &__icon {
-    margin: 0 0 0 auto;
-  }
-}
-
 .container {
   z-index: 900;
   padding-top: 64px;

@@ -1,19 +1,3 @@
-<mat-toolbar class="header" color="primary">
-  <mat-toolbar-row>
-    <span class="header-logo">Work Out</span>
-    <span>
-      <button
-        mat-raised-button
-        routerLink="/login"
-        class="header-button"
-        color="primary"
-      >
-        Login
-      </button>
-    </span>
-  </mat-toolbar-row>
-</mat-toolbar>
-
 <div class="create">
   <h1>Create New Acount</h1>
   <p>Profile</p>
@@ -23,115 +7,125 @@
   <div class="profile">
     <form [formGroup]="form" (ngSubmit)="submit()">
       <div class="profile__form">
-      <!-- mat-form-fieldの中身は名前を入力する欄を意味している -->
-      <mat-form-field>
-        <mat-label>user name</mat-label>
-        <!-- htmlにもrequiredで必須入力と定義する。placeholderで例文を表示させる -->
-        <input
-          formControlName="name"
-          id="userName"
-          matInput
-          autofocus
-          placeholder="John Smith"
-          type="text"
-          autocomplete="off"
-          required
-        />
-        <mat-error *ngIf="nameControl.hasError('required')"
-          >You must enter a value</mat-error
-        >
-        <mat-error *ngIf="nameControl.hasError('maxlength')"
-          >Text string is too long</mat-error
-        >
-      </mat-form-field>
+        <!-- mat-form-fieldの中身は名前を入力する欄を意味している -->
+        <mat-form-field>
+          <mat-label>user name</mat-label>
+          <!-- htmlにもrequiredで必須入力と定義する。placeholderで例文を表示させる -->
+          <input
+            formControlName="name"
+            id="userName"
+            matInput
+            autofocus
+            placeholder="John Smith"
+            type="text"
+            autocomplete="off"
+            required
+          />
+          <mat-error *ngIf="nameControl.hasError('required')"
+            >You must enter a value</mat-error
+          >
+          <mat-error *ngIf="nameControl.hasError('maxlength')"
+            >Text string is too long</mat-error
+          >
+        </mat-form-field>
 
+        <!-- 性別 -->
+        <mat-form-field>
+          <mat-label>select an gender</mat-label>
+          <mat-select matInput formControlName="gender" id="gender">
+            <mat-option>None</mat-option>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <!-- 性別 -->
-      <mat-form-field>
-        <mat-label>select an gender</mat-label>
-        <mat-select matInput formControlName="gender" id="gender">
-          <mat-option>None</mat-option>
-          <mat-option value="male">Male</mat-option>
-          <mat-option value="female">Female</mat-option>
-        </mat-select>
-      </mat-form-field>
+        <!-- Email -->
+        <mat-form-field>
+          <mat-label>email</mat-label>
+          <input
+            formControlName="email"
+            id="email"
+            matInput
+            placeholder="WorkOut123@example.com"
+            type="email"
+            autocomplete="email"
+            required
+          />
+          <mat-error *ngIf="emailControl.hasError('required')"
+            >You must enter a value</mat-error
+          >
+          <mat-error *ngIf="emailControl.hasError('email')"
+            >Not a valid email</mat-error
+          >
+        </mat-form-field>
 
+        <!-- password -->
+        <mat-form-field>
+          <mat-label>password</mat-label>
+          <mat-hint>8+ characters</mat-hint>
+          <input
+            [type]="hide ? 'password' : 'text'"
+            matInput
+            placeholder="password"
+            id="password"
+            formControlName="password"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="passwordControl.hasError('required')"
+            >You must enter a value</mat-error
+          >
+          <mat-error *ngIf="passwordControl.hasError('minlength')"
+            >Password is short</mat-error
+          >
+        </mat-form-field>
 
-      <!-- Email -->
-      <mat-form-field>
-        <mat-label>email</mat-label>
-        <input
-          formControlName="email"
-          id="email"
-          matInput
-          placeholder="WorkOut123@example.com"
-          type="email"
-          autocomplete="email"
-          required
-        />
-        <mat-error *ngIf="emailControl.hasError('required')"
-          >You must enter a value</mat-error
-        >
-        <mat-error *ngIf="emailControl.hasError('email')"
-          >Not a valid email</mat-error
-        >
-      </mat-form-field>
+        <!-- confirm-password -->
+        <mat-form-field>
+          <mat-label>confirm password</mat-label>
+          <input
+            [type]="hideConfirm ? 'password' : 'text'"
+            matInput
+            placeholder="confirm password"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hideConfirm = !hideConfirm"
+          >
+            <mat-icon>{{
+              hideConfirm ? 'visibility_off' : 'visibility'
+            }}</mat-icon>
+          </button>
+          <mat-error *ngIf="confirmPasswordControl.hasError('required')"
+            >You must enter a value</mat-error
+          >
+          <mat-error
+            *ngIf="form.controls.confirmPassword.errors?.notMatchPassword"
+            >Passwords do not match</mat-error
+          >
+        </mat-form-field>
 
-      <!-- password -->
-      <mat-form-field>
-        <mat-label>password</mat-label>
-        <mat-hint>8+ characters</mat-hint>
-        <input
-          [type]="hide ? 'password' : 'text'"
-          matInput
-          placeholder="password"
-          id="password"
-          formControlName="password"
-          required
-        />
         <button
-          mat-icon-button
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide"
+          (click)="create()"
+          mat-raised-button
+          color="primary"
+          routerLink="/login"
         >
-          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          Next
         </button>
-        <mat-error *ngIf="passwordControl.hasError('required')"
-          >You must enter a value</mat-error
-        >
-        <mat-error *ngIf="passwordControl.hasError('minlength')"
-          >Password is short</mat-error
-        >
-      </mat-form-field>
-
-      <!-- confirm-password -->
-      <mat-form-field>
-        <mat-label>confirm password</mat-label>
-        <input
-          [type]="hideConfirm ? 'password' : 'text'"
-          matInput
-          placeholder="confirm password"
-          id="confirmPassword"
-          formControlName="confirmPassword"
-          required
-        />
-        <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm">
-          <mat-icon>{{
-            hideConfirm ? 'visibility_off' : 'visibility'
-          }}</mat-icon>
-        </button>
-        <mat-error *ngIf="confirmPasswordControl.hasError('required')"
-          >You must enter a value</mat-error
-        >
-        <mat-error *ngIf="form.controls.confirmPassword.errors?.notMatchPassword">Passwords do not match</mat-error>
-      </mat-form-field>
-
-      <button (click)="create()" mat-raised-button color="primary" routerLink="/login">
-        Next
-      </button>
-    </div>
+      </div>
     </form>
   </div>
 </div>

@@ -1,12 +1,3 @@
-.header {
-  color: white;
-}
-
-mat-toolbar-row {
-  display: flex;
-  justify-content: space-between;
-}
-
 h1 {
   color: white;
 }
@@ -28,6 +19,7 @@ p {
 }
 
 .create {
+  padding-top: 64px;
   background: center/cover url(/assets/images/training.jpg);
   height: 100%;
   text-align: center;
