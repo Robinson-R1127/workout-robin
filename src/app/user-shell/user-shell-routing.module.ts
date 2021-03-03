@@ -45,9 +45,9 @@ const routes: Routes = [
           import('../terms/terms.module').then(m => m.TermsModule)
       },
       {
-        path: 'user-shell',
+        path: 'settings',
         loadChildren: () =>
-          import('../user-shell/user-shell.module').then(m => m.UserShellModule)
+          import('../settings/settings.module').then(m => m.SettingsModule)
       },
       {
         path: '**',
