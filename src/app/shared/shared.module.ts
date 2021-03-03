@@ -14,11 +14,21 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  // Componentを使いたい時はdeclarationsとimportsに入れる
-  declarations: [],
-  imports: [],
+  // Componentを使いたい時はdeclarationsとexportsに入れる
+  declarations: [HeaderComponent, FooterComponent],
+  //追加したComponent内で使いたいModuleをimportsに追加する
+  imports: [
+    MatMenuModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    RouterModule
+  ],
   exports: [
     ReactiveFormsModule,
     FormsModule,
@@ -34,7 +44,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatListModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule {}

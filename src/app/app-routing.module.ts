@@ -8,7 +8,7 @@ const routes: Routes = [
       import('./welcome/welcome.module').then(m => m.WelcomeModule)
   },
   {
-    path: 'user',
+    path: '',
     loadChildren: () =>
       import('./user-shell/user-shell.module').then(m => m.UserShellModule)
   }
