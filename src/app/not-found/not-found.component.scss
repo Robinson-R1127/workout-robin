@@ -4,14 +4,15 @@
   }
 }
 
-.header-logo {
-  color: white;
-  display: block;
-  text-decoration: none;
+.wrapper {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
-
 img {
-  margin-top: 50px;
   @include sp {
     width: 240px;
   }
