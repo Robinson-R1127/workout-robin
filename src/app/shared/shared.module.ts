@@ -17,6 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   // Componentを使いたい時はdeclarationsとexportsに入れる
@@ -46,7 +47,8 @@ import { RouterModule } from '@angular/router';
     MatTabsModule,
     MatMenuModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MatSnackBarModule
   ]
 })
 export class SharedModule {}

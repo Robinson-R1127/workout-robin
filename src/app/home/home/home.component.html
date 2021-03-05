@@ -1,62 +1,218 @@
 <div class="wrapper">
   <div class="timeline">
     <div class="grid">
-      <mat-card class="card">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
-          <mat-card-title>Jhon Smith</mat-card-title>
-          <mat-card-subtitle>2,12,2018</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="/assets/images/training.jpg" alt="workout" />
-        <mat-card-content>
+      <div class="card">
+        <div class="card__header">
+          <div class="card__avatar">
+            <img class="card__avatars" src="/assets/images/training-1.jpg" />
+          </div>
+          <div class="card__sub">
+            <div class="card__name">
+              <h2 class="card__names">Jhon Smith</h2>
+            </div>
+            <div class="card__date">
+              <p>2,12,2018</p>
+            </div>
+          </div>
+        </div>
+        <img
+          class="card__iimg"
+          src="/assets/images/training-1.jpg"
+          alt="workout"
+        />
+        <div class="card__action">
+          <button class="card__like" mat-icon-button>
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </div>
+        <div class="card__content">
           <p>
-            workout
+            I have just joined a gym. I enjoy working out.
           </p>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="card">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
-          <mat-card-title>Jhon Smith</mat-card-title>
-          <mat-card-subtitle>2,12,2018</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="/assets/images/training.jpg" alt="workout" />
-        <mat-card-content>
-          <p>
-            workout
-          </p>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="card">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
-          <mat-card-title>Jhon Smith</mat-card-title>
-          <mat-card-subtitle>2,12,2018</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="/assets/images/training.jpg" alt="workout" />
-        <mat-card-content>
-          <p>
-            workout
-          </p>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="card">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
-          <mat-card-title>Jhon Smith</mat-card-title>
-          <mat-card-subtitle>2,12,2018</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="/assets/images/training.jpg" alt="workout" />
-        <mat-card-content>
-          <p>
-            workout
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+          <form [formGroup]="form" class="card__comments" (ngSubmit)="submit()">
+            <mat-form-field class="card__form">
+              <mat-label>Comment</mat-label>
+              <input
+                formControlName="comment"
+                type="text"
+                autocomplete="off"
+                matInput
+                placeholder="Add comment..."
+              />
+            </mat-form-field>
+            <div class="card__actions">
+              <button
+                mat-raised-button
+                color="primary"
+                [disabled]="!commentControl.value"
+                (click)="post()"
+              >
+                Post
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
 
-    <button class="post-button" mat-icon-button (click)="openPostDialog()">
-      <mat-icon>create</mat-icon>
-    </button>
+      <div class="card">
+        <div class="card__header">
+          <div class="card__avatar">
+            <img class="card__avatars" src="/assets/images/training-2.jpg" />
+          </div>
+          <div class="card__sub">
+            <div class="card__name">
+              <h2 class="card__names">Jhon Smith</h2>
+            </div>
+            <div class="card__date">
+              <p>2,12,2018</p>
+            </div>
+          </div>
+        </div>
+        <img
+          class="card__iimg"
+          src="/assets/images/training-2.jpg"
+          alt="workout"
+        />
+        <div class="card__action">
+          <button class="card__like" mat-icon-button>
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </div>
+        <div class="card__content">
+          <p>
+            I have just joined a gym. I enjoy working out.
+          </p>
+          <form [formGroup]="form" class="card__comments" (ngSubmit)="submit()">
+            <mat-form-field class="card__form">
+              <mat-label>Comment</mat-label>
+              <input
+                formControlName="comment"
+                type="text"
+                autocomplete="off"
+                matInput
+                placeholder="Add comment..."
+              />
+            </mat-form-field>
+            <div class="card__actions">
+              <button
+                mat-raised-button
+                color="primary"
+                [disabled]="!commentControl.value"
+              >
+                Post
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__header">
+          <div class="card__avatar">
+            <img class="card__avatars" src="/assets/images/training-1.jpg" />
+          </div>
+          <div class="card__sub">
+            <div class="card__name">
+              <h2 class="card__names">Jhon Smith</h2>
+            </div>
+            <div class="card__date">
+              <p>2,12,2018</p>
+            </div>
+          </div>
+        </div>
+        <img
+          class="card__iimg"
+          src="/assets/images/training-1.jpg"
+          alt="workout"
+        />
+        <div class="card__action">
+          <button class="card__like" mat-icon-button>
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </div>
+        <div class="card__content">
+          <p>
+            I have just joined a gym. I enjoy working out.
+          </p>
+          <form [formGroup]="form" class="card__comments" (ngSubmit)="submit()">
+            <mat-form-field class="card__form">
+              <mat-label>Comment</mat-label>
+              <input
+                formControlName="comment"
+                type="text"
+                autocomplete="off"
+                matInput
+                placeholder="Add comment..."
+              />
+            </mat-form-field>
+            <div class="card__actions">
+              <button
+                mat-raised-button
+                color="primary"
+                [disabled]="!commentControl.value"
+              >
+                Post
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__header">
+          <div class="card__avatar">
+            <img class="card__avatars" src="/assets/images/training-2.jpg" />
+          </div>
+          <div class="card__sub">
+            <div class="card__name">
+              <h2 class="card__names">Jhon Smith</h2>
+            </div>
+            <div class="card__date">
+              <p>2,12,2018</p>
+            </div>
+          </div>
+        </div>
+        <img
+          class="card__iimg"
+          src="/assets/images/training-2.jpg"
+          alt="workout"
+        />
+        <div class="card__action">
+          <button class="card__like" mat-icon-button>
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </div>
+        <div class="card__content">
+          <p>
+            I have just joined a gym. I enjoy working out.
+          </p>
+          <form [formGroup]="form" class="card__comments" (ngSubmit)="submit()">
+            <mat-form-field class="card__form">
+              <mat-label>Comment</mat-label>
+              <input
+                formControlName="comment"
+                type="text"
+                autocomplete="off"
+                matInput
+                placeholder="Add comment..."
+              />
+            </mat-form-field>
+            <div class="card__actions">
+              <button
+                mat-raised-button
+                color="primary"
+                [disabled]="!commentControl.value"
+              >
+                Post
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <button class="post-button" mat-icon-button (click)="openPostDialog()">
+        <mat-icon>create</mat-icon>
+      </button>
+    </div>
   </div>
 </div>
