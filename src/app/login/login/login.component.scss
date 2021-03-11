@@ -19,7 +19,7 @@ h2 {
 
 .login-form {
   padding-top: 64px;
-  background: center/cover url(/assets/images/training.jpg);
+  background: center/cover url(/assets/images/training-1.jpg);
   height: 100%;
   text-align: center;
   display: flex;
@@ -57,13 +57,15 @@ mat-label {
   opacity: 0.6;
 }
 
-.google-button {
+.google {
   font-weight: bold;
   margin-bottom: 18px;
   width: 100%;
-  border-style: solid;
-  border-width: 1px;
-
+  &__text {
+    @media screen and(max-width: 500px) {
+      display: none;
+    }
+  }
   .g-icon {
     position: absolute;
     left: 15px;
@@ -75,17 +77,23 @@ mat-label {
 .facebook {
   color: #fff;
   background-color: #3b5998;
-  border-color: #3b5998;
   font-weight: bold;
   width: 100%;
   margin-bottom: 10px;
-  border-style: solid;
-  border-width: 1px;
-
+  &__text {
+    @media screen and(max-width: 500px) {
+      display: none;
+    }
+  }
   .f-icon {
     position: absolute;
     left: 15px;
     top: 25%;
     width: 1.4em;
   }
+}
+
+.create {
+  color: #000;
+  float: right;
 }

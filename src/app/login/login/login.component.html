@@ -61,17 +61,14 @@
         </button>
       </div>
       <h2>SNS acount</h2>
-      <button
-        class="google-button"
-        mat-raised-button
-        (click)="signInWithGoogle()"
-      >
+      <button class="google" mat-raised-button (click)="signInWithGoogle()">
         <img
           class="g-icon"
           src="assets/images/google-logo.png"
           width="20"
           height="20"
-        />Continue With Google
+        /><span class="google__text">Continue With </span>Google
+        <!-- <span class="google__ghost">Login</span> -->
       </button>
 
       <button (click)="signInWithFacebook()" class="facebook" mat-raised-button>
@@ -81,7 +78,12 @@
           width="20"
           height="20"
           alt="facebook-icon"
-        />Continue With Facebook
+        /><span class="facebook__text">Continue With </span>Facebook
+        <!-- <span class="facebook__ghost">login</span> -->
+      </button>
+
+      <button class="create" routerLink="/create" mat-button>
+        Those who do not have an account
       </button>
     </form>
   </div>
