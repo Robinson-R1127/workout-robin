@@ -24,7 +24,7 @@
     top: 0;
     left: 0;
   }
-  &__con {
+  &__container {
     padding-left: 5%;
     text-align: left;
     margin: 72.5px 50px;
@@ -32,7 +32,7 @@
       margin: 32.5px 0;
     }
   }
-  &__tit {
+  &__title {
     border: 1px solid #fff;
     width: 30%;
     text-align: center;
@@ -102,7 +102,7 @@
       text-align: center;
     }
   }
-  &__sub {
+  &__subtitle {
     text-align: center;
     color: #fff;
     @media screen and (max-width: 1350px) {
@@ -171,7 +171,7 @@
       height: 70px;
     }
   }
-  &__itemli {
+  &__svg {
     background-color: #fff;
     border-radius: 3px;
     text-align: center;
@@ -203,7 +203,7 @@
       height: 45%;
     }
   }
-  &__subt {
+  &__sub {
     color: #fff;
     opacity: 0.8;
     @media screen and (max-width: 750px) {
@@ -227,7 +227,7 @@
   }
 }
 
-.cont {
+.bottom {
   z-index: 2;
   position: relative;
   top: 40%;
