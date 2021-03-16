@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { auth, User } from 'firebase/app';
 import { Observable } from 'rxjs';
@@ -11,7 +11,11 @@ import { Observable } from 'rxjs';
 export class AuthService {
   afUser$: Observable<User> = this.afAuth.user;
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {
     this.afUser$.subscribe(user => console.log(user));
   }
 
@@ -24,10 +28,10 @@ export class AuthService {
       .catch(error => {
         switch (error.code) {
           case 'auth/email-already-in-use':
-            alert('このアドレスは既に登録されています。');
+            alert('This email address is already registered');
             break;
           case 'auth/invalid-email':
-            alert('メールアドレスが不正です');
+            alert('The email address is incorrect');
             break;
         }
       });
@@ -52,17 +56,31 @@ export class AuthService {
   }
 
   signInWithGoogle() {
-    this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
+    this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()).then(() => {
+      this.snackBar.open('Logged in successfully', null, {
+        duration: 2000
+      });
+    });
+    this.router.navigateByUrl('/');
   }
 
   signInWithFacebook() {
-    this.afAuth.signInWithPopup(new auth.FacebookAuthProvider());
+    this.afAuth.signInWithPopup(new auth.FacebookAuthProvider()).then(() => {
+      this.snackBar.open('Logged in successfully', null, {
+        duration: 2000
+      });
+    });
+    this.router.navigateByUrl('/');
   }
 
   logout() {
     // ログアウト処理
-    this.afAuth.signOut();
+    this.afAuth.signOut().then(() => {
+      this.snackBar.open('Logged out', null, {
+        duration: 2000
+      });
+    });
     // ログアウトした時にどこのページに飛ばすか記述
-    this.router.navigateByUrl('/welcome');
+    this.router.navigateByUrl('/login');
   }
 }
