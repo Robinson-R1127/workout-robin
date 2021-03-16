@@ -13,12 +13,16 @@
       <span>Settings</span>
     </button>
     <button mat-menu-item (click)="authService.logout()">
-      <mat-icon>exit_to_app</mat-icon>
+      <mat-icon>logout</mat-icon>
       <span>Logout</span>
     </button>
-    <button mat-menu-item>
-      <mat-icon>help</mat-icon>
-      <span>Help</span>
+    <button mat-menu-item routerLink="/privacy">
+      <mat-icon>privacy_tip</mat-icon>
+      <span>Privacy Policy</span>
+    </button>
+    <button mat-menu-item routerLink="/terms">
+      <mat-icon>assignment</mat-icon>
+      <span>Terms and Conditions</span>
     </button>
   </mat-menu>
 </mat-toolbar>
