@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent, PostDialogComponent, NotFoundComponent],
@@ -23,7 +24,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    SharedModule
+    SharedModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
