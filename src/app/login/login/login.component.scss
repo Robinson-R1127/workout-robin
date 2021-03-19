@@ -95,5 +95,9 @@ mat-label {
 
 .create {
   color: #000;
-  float: right;
+  &__text {
+    @media screen and(max-width: 400px) {
+      font-size: 10px;
+    }
+  }
 }
