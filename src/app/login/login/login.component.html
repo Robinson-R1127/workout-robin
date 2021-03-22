@@ -68,7 +68,6 @@
           width="20"
           height="20"
         /><span class="google__text">Continue With </span>Google
-        <!-- <span class="google__ghost">Login</span> -->
       </button>
 
       <button (click)="signInWithFacebook()" class="facebook" mat-raised-button>
@@ -79,11 +78,10 @@
           height="20"
           alt="facebook-icon"
         /><span class="facebook__text">Continue With </span>Facebook
-        <!-- <span class="facebook__ghost">login</span> -->
       </button>
 
       <button class="create" routerLink="/create" mat-button>
-        Those who do not have an account
+        <span class="create__text">Do not have an account?</span>
       </button>
     </form>
   </div>
