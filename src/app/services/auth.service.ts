@@ -15,9 +15,7 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private router: Router,
     private snackBar: MatSnackBar
-  ) {
-    this.afUser$.subscribe(user => console.log(user));
-  }
+  ) {}
 
   createUser(params: { email: string; password: string }) {
     this.afAuth
@@ -46,7 +44,7 @@ export class AuthService {
             alert('No user found for this email address');
             break;
           case 'auth/wrong-password':
-            alert('your password is incorrect');
+            alert('Your password is incorrect');
             break;
           case 'auth/invalid-email':
             alert('The email address is incorrect');
@@ -56,7 +54,10 @@ export class AuthService {
   }
 
   signInWithGoogle() {
-    this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()).then(() => {
+    const provider = new auth.GoogleAuthProvider();
+    //　62行目でサインインするときにアカウントを選ぶことができる
+    provider.setCustomParameters({ prompt: 'select_account' });
+    this.afAuth.signInWithPopup(provider).then(() => {
       this.snackBar.open('Logged in successfully', null, {
         duration: 2000
       });
