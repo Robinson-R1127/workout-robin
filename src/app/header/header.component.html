@@ -1,11 +1,11 @@
 <mat-toolbar color="primary" class="header">
   <a class="header__logo" routerLink="/">Work Out</a>
   <button class="header__icon" mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
+    <mat-icon>account_circle</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
     <a mat-menu-item routerLink="/profile">
-      <mat-icon>account_circle</mat-icon>
+      <mat-icon>account_box</mat-icon>
       <span>My page</span>
     </a>
     <button routerLink="/settings" mat-menu-item>
