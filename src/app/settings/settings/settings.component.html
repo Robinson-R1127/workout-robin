@@ -8,31 +8,29 @@
             src="/assets/images/training-1.jpg"
             alt=""
           />
-        </div>
-        <div class="user__headers">
-          <h1 class="user__name">Jhon Smith</h1>
-          <button class="user__edits" mat-stroked-button color="primary">
-            Edit profile image
+          <button mat-mini-fab>
+            <mat-icon>camera_alt</mat-icon>
           </button>
         </div>
       </div>
       <div class="user__container">
         <div class="user__editname">
           <p>User Name</p>
-          <div class="user__form">
-            <mat-form-field class="user__forms" appearance="outline">
-              <mat-label>Change your name</mat-label>
-              <input matInput placeholder="Jhon Smith" />
-            </mat-form-field>
-          </div>
+
+          <mat-form-field class="user__forms" type="text" appearance="outline">
+            <mat-label>User Name</mat-label>
+
+            <input matInput placeholder="Jhon Smith" />
+          </mat-form-field>
         </div>
         <div class="user__editsents">
-          <p>Introduction</p>
+          <p>Introdacution</p>
           <mat-form-field
             class="card__editsent"
             type="text"
             appearance="outline"
           >
+            <mat-label>Introduction</mat-label>
             <textarea
               class="card__input"
               placeholder="Work Out"
@@ -43,52 +41,42 @@
         </div>
         <div class="user__editgender">
           <p>Gender</p>
-          <div class="user__form">
-            <mat-form-field appearance="outline">
-              <mat-label>select an gender</mat-label>
-              <mat-select matInput id="gender">
-                <mat-option>None</mat-option>
-                <mat-option value="male">Male</mat-option>
-                <mat-option value="female">Female</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+
+          <mat-form-field appearance="outline">
+            <mat-label>select an gender</mat-label>
+            <mat-select matInput id="gender">
+              <mat-option>None</mat-option>
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="user__editheight">
           <p>Height</p>
-          <div class="user__form h">
-            <div class="user__height">
-              <mat-form-field class="user__forms" appearance="outline">
-                <mat-label>Change your Height</mat-label>
-                <input matInput type="number" placeholder="5" />
-                <span matSuffix>'</span>
-              </mat-form-field>
-            </div>
-            <div class="user__height">
-              <mat-form-field class="user__forms" appearance="outline">
-                <input matInput type="number" placeholder="6.93" />
-                <span matSuffix>"</span>
-              </mat-form-field>
-            </div>
-          </div>
+
+          <mat-form-field class="user__forms" appearance="outline">
+            <mat-label>Change your Height</mat-label>
+            <input matInput type="number" placeholder="5" />
+            <span matSuffix>'</span>
+          </mat-form-field>
+
+          <mat-form-field class="user__forms" appearance="outline">
+            <input matInput type="number" placeholder="6.93" />
+            <span matSuffix>"</span>
+          </mat-form-field>
         </div>
         <div class="user__editweight">
           <p>Weight</p>
-          <div class="user__form">
-            <div class="user__weight">
-              <mat-form-field class="user__forms" appearance="outline">
-                <mat-label>Change your Weight</mat-label>
-                <input matInput type="number" placeholder="149" />
-                <span matSuffix>.</span>
-              </mat-form-field>
-            </div>
-            <div class="user__weight">
-              <mat-form-field class="user__forms" appearance="outline">
-                <input matInput type="number" placeholder="91" />
-                <span matSuffix>lb</span>
-              </mat-form-field>
-            </div>
-          </div>
+
+          <mat-form-field class="user__forms" appearance="outline">
+            <mat-label>Change your Weight</mat-label>
+            <input matInput type="number" placeholder="149" />
+            <span matSuffix>.</span>
+          </mat-form-field>
+          <mat-form-field class="user__forms" appearance="outline">
+            <input matInput type="number" placeholder="91" />
+            <span matSuffix>lb</span>
+          </mat-form-field>
         </div>
       </div>
       <div class="user__action">
