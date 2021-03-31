@@ -311,10 +311,11 @@ footer {
   color: #fff;
   p {
     margin: 0;
-    padding: 1%;
+    padding: 24px;
     padding-bottom: 6px;
+    font-size: 12px;
     @media screen and (max-width: 750px) {
-      padding: 1.5%;
+      padding: 3%;
     }
     @media screen and (max-width: 320px) {
       padding: 1%;
@@ -324,12 +325,6 @@ footer {
 
 .twitter {
   img {
-    height: 30%;
-    @media screen and (max-width: 750px) {
-      margin-top: 3px;
-    }
-    @media screen and (max-width: 320px) {
-      margin: 0;
-    }
+    height: 20%;
   }
 }
