@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [CreateComponent],
@@ -26,7 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    SharedModule
   ]
 })
 export class CreateModule {}
