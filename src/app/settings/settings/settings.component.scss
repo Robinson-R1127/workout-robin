@@ -4,8 +4,6 @@
   }
 }
 
-$pad: 1.34375em;
-
 .container {
   z-index: 900;
   padding-top: 64px;
@@ -24,7 +22,8 @@ $pad: 1.34375em;
 .user {
   position: relative;
   &__header {
-    margin: 16px 16px 48px;
+    margin: 36px;
+    align-items: center;
     display: flex;
   }
   &__headers {
@@ -42,9 +41,27 @@ $pad: 1.34375em;
     width: 100%;
   }
   &__avatar {
-    margin-right: 28px;
-    @media screen and (max-width: 735px) {
-      height: 77px;
+    position: relative;
+    margin: 0 auto;
+    button {
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+      background-color: rgba(192, 192, 192);
+      @media screen and (max-width: 735px) {
+        width: 30px;
+        height: 30px;
+        bottom: 5%;
+        right: 4%;
+      }
+    }
+    .mat-icon {
+      @media screen and (max-width: 735px) {
+        font-size: 22px;
+        position: absolute;
+        bottom: 2px;
+        right: 3px;
+      }
     }
   }
   &__avatars {
@@ -53,106 +70,12 @@ $pad: 1.34375em;
     object-fit: cover;
     border-radius: 50%;
     @media screen and (max-width: 735px) {
-      width: 77px;
-      height: 77px;
+      width: 120px;
+      height: 120px;
     }
   }
-  // &__container {
-  // }
-  &__editname {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media screen and (max-width: 735px) {
-      text-align: center;
-      display: block;
-    }
-  }
-  &__editname p {
-    padding-bottom: $pad;
-    @media screen and (max-width: 735px) {
-      padding-bottom: 0;
-      margin-top: 0;
-    }
-  }
-  &__form {
-    display: flex;
-    @media screen and (max-width: 735px) {
-      display: block;
-    }
-  }
-  &__forms {
-    padding: 0;
-    margin-left: 8px;
-  }
-  &__editsents {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media screen and (max-width: 735px) {
-      text-align: center;
-      display: block;
-    }
-  }
-  &__editsents p {
-    padding-bottom: $pad;
-    @media screen and (max-width: 735px) {
-      padding-bottom: 0;
-      margin-top: 0;
-    }
-  }
-  &__editgender {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media screen and (max-width: 735px) {
-      text-align: center;
-      display: block;
-    }
-  }
-  &__editgender p {
-    padding-bottom: $pad;
-    @media screen and (max-width: 735px) {
-      padding-bottom: 0;
-      margin-top: 0;
-    }
-  }
-  &__editheight {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media screen and (max-width: 735px) {
-      text-align: center;
-      display: block;
-    }
-  }
-  &__editheight p {
-    padding-bottom: $pad;
-    @media screen and (max-width: 735px) {
-      padding-bottom: 0;
-      margin-top: 0;
-    }
-  }
-  &__form.h {
-    @media screen and (max-width: 735px) {
-      text-align: center;
-    }
-  }
-  &__editweight {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media screen and (max-width: 735px) {
-      text-align: center;
-      display: block;
-    }
-  }
-  &__editweight p {
-    padding-bottom: $pad;
-    @media screen and (max-width: 735px) {
-      padding-bottom: 0;
-      margin-top: 0;
-    }
+  &__container {
+    margin: 0 24px;
   }
   &__action {
     text-align: right;
@@ -170,4 +93,9 @@ $pad: 1.34375em;
 
 p {
   font-weight: bold;
+  float: left;
+}
+
+mat-form-field {
+  width: 100%;
 }
